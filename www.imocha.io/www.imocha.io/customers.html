@@ -1,0 +1,78 @@
+<!DOCTYPE html><!-- This site was created in Webflow. https://webflow.com --><!-- Last Published: Fri Feb 27 2026 11:42:53 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain="www.imocha.io" data-wf-page="689311f046cc496e4f65153c" data-wf-site="6278a259cc3db4179e7a3a8e"><head><meta charset="utf-8"/><title>Customer stories</title><meta content="Explore iMocha customer success stories &amp; see how enterprises use AI-powered skill assessments, analytics, &amp; skills intelligence to transform hiring &amp; development." name="description"/><meta content="Customer stories" property="og:title"/><meta content="Explore iMocha customer success stories &amp; see how enterprises use AI-powered skill assessments, analytics, &amp; skills intelligence to transform hiring &amp; development." property="og:description"/><meta content="Customer stories" property="twitter:title"/><meta content="Explore iMocha customer success stories &amp; see how enterprises use AI-powered skill assessments, analytics, &amp; skills intelligence to transform hiring &amp; development." property="twitter:description"/><meta property="og:type" content="website"/><meta content="summary_large_image" name="twitter:card"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="Webflow" name="generator"/><link href="../../../cdn.prod.website-files.com/6278a259cc3db4179e7a3a8e/css/imocha.webflow.shared.49d475646.min.css" rel="stylesheet" type="text/css" integrity="sha384-SdR1ZG76OY6bTxh8ogEVpfzMk61caYrktCliqhYYPZ6z0wkLz5nXSzWgtbuwIXhi" crossorigin="anonymous"/>
+
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Select all radio button wrappers
+  const radioWrappers = document.querySelectorAll(".radio_btn-wrap");
+
+  radioWrappers.forEach(wrapper => {
+    // Check initially
+    toggleTextColor(wrapper);
+
+    // If the class changes dynamically (e.g., click), observe it
+    const observer = new MutationObserver(() => toggleTextColor(wrapper));
+    observer.observe(wrapper, { attributes: true, attributeFilter: ["class"] });
+  });
+
+  function toggleTextColor(wrapper) {
+    const filterText = wrapper.querySelector(".is-filter_text");
+    if (filterText) {
+      if (wrapper.classList.contains("is-active")) {
+        filterText.style.color = "white";
+      } else {
+        filterText.style.color = ""; // reset to default
+      }
+    }
+  }
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const elements = document.querySelectorAll(".radio_btn-wrap");
+
+  // Function to update shadow
+  function updateShadow(el) {
+    if (el.classList.contains("is-active")) {
+      el.style.boxShadow =
+        "inset 2px 2px 4px rgba(0, 0, 0, 0.08), " +  /* 1st */
+        "inset -2px -2px 4px rgba(255, 255, 255, 0.25), " + /* 2nd */
+        "inset -4px -4px 12px rgba(255, 255, 255, 0.25)";  /* 3rd */
+
+      el.style.backgroundColor = "#fd5b0e";
+    } else {
+      el.style.boxShadow = ""; 
+      el.style.backgroundColor = "rgba(255, 82, 0, 0.05)";
+    }
+  }
+
+  // Initial check and observer setup
+  elements.forEach(el => {
+    updateShadow(el);
+
+    // Watch for class changes
+    const observer = new MutationObserver(() => updateShadow(el));
+    observer.observe(el, {
+      attributes: true,
+      attributeFilter: ["class"]
+    });
+  });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>

@@ -1,0 +1,29 @@
+# Temporary files
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+._*
+
+# Node modules
+node_modules/
+
+# QA videos
+qa-audit/videos/
+
+# Python
+__pycache__/
+*.pyc
+
+# Environment
+.env

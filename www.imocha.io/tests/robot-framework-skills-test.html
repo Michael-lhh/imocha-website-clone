@@ -1,0 +1,94 @@
+<!DOCTYPE html><!-- This site was created in Webflow. https://webflow.com --><!-- Last Published: Fri Feb 27 2026 11:42:53 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain="www.imocha.io" data-wf-page="6551b75144d8e8e968caf76a" data-wf-site="6278a259cc3db4179e7a3a8e" data-wf-collection="6551b75144d8e8e968caf92e" data-wf-item-slug="robot-framework-skills-test"><head><meta charset="utf-8"/><title>Robot Framework Skills Test | Candidate Screening | iMocha</title><meta content="Struggling to assess individuals&#x27; competencies in Robot Framework? Try iMocha&#x27;s skills test to reduce technical screening time by 80%." name="description"/><meta content="Robot Framework Skills Test | Candidate Screening | iMocha" property="og:title"/><meta content="Struggling to assess individuals&#x27; competencies in Robot Framework? Try iMocha&#x27;s skills test to reduce technical screening time by 80%." property="og:description"/><meta content="Robot Framework Skills Test | Candidate Screening | iMocha" property="twitter:title"/><meta content="Struggling to assess individuals&#x27; competencies in Robot Framework? Try iMocha&#x27;s skills test to reduce technical screening time by 80%." property="twitter:description"/><meta property="og:type" content="website"/><meta content="summary_large_image" name="twitter:card"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="Webflow" name="generator"/><link href="./cdn.prod.website-files.com/6278a259cc3db4179e7a3a8e/css/imocha.webflow.shared.49d475646.min.css" rel="stylesheet" type="text/css" integrity="sha384-SdR1ZG76OY6bTxh8ogEVpfzMk61caYrktCliqhYYPZ6z0wkLz5nXSzWgtbuwIXhi" crossorigin="anonymous"/><style>@media (min-width:992px) {html.w-mod-js:not(.w-mod-ix) [data-w-id="75ef00ce-5845-8314-dbb5-35bd43cf9b0b"] {-webkit-transform:translate3d(0, -208px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, -208px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, -208px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, -208px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);}}</style>
+
+
+
+<script>
+if (!$('#faq-item-wrap').length){
+    $('#hide-section').hide();
+}
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var answers = document.querySelectorAll(".faq_content");
+
+  answers.forEach(function (el) {
+
+    // Prevent double processing
+    if (el.dataset.processed === "true") return;
+
+    var raw = el.textContent || "";
+    raw = raw.trim();
+    if (!raw) return;
+
+    // If no bullet markers exist, do nothing
+    if (!raw.includes("•") && !/\d+\.\s/.test(raw)) return;
+
+    // Escape HTML safely
+    function escapeHTML(str) {
+      var div = document.createElement("div");
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    var html = "";
+    var introText = raw;
+
+    // ---- HANDLE DOT BULLETS ----
+    if (raw.includes("•")) {
+      var firstBulletIndex = raw.indexOf("•");
+      introText = raw.slice(0, firstBulletIndex).trim();
+      var bulletParts = raw.slice(firstBulletIndex)
+        .split("•")
+        .map(function (p) { return p.trim(); })
+        .filter(Boolean);
+
+      if (introText) {
+        html += "<p>" + escapeHTML(introText) + "</p>";
+      }
+
+      html += "<ul>";
+      bulletParts.forEach(function (item) {
+        html += "<li>" + escapeHTML(item) + "</li>";
+      });
+      html += "</ul>";
+    }
+
+    // ---- HANDLE NUMBERED LISTS ----
+    else if (/\d+\.\s/.test(raw)) {
+      var parts = raw.split(/(\d+\.\s)/).filter(Boolean);
+
+      var items = [];
+      var intro = "";
+
+      for (var i = 0; i < parts.length; i++) {
+        if (/^\d+\.\s$/.test(parts[i]) && parts[i+1]) {
+          items.push(parts[i+1].trim());
+          i++;
+        } else {
+          intro += parts[i];
+        }
+      }
+
+      intro = intro.trim();
+
+      if (intro) {
+        html += "<p>" + escapeHTML(intro) + "</p>";
+      }
+
+      html += "<ol>";
+      items.forEach(function (item) {
+        html += "<li>" + escapeHTML(item) + "</li>";
+      });
+      html += "</ol>";
+    }
+
+    if (!html) return;
+
+    el.innerHTML = html;
+
+    // Mark as processed
+    el.dataset.processed = "true";
+  });
+});
+</script>
+</body></html>

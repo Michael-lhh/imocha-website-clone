@@ -1,0 +1,74 @@
+<!DOCTYPE html><!-- This site was created in Webflow. https://webflow.com --><!-- Last Published: Fri Feb 27 2026 11:42:53 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain="www.imocha.io" data-wf-page="677b9cebec8e9846dbac75a6" data-wf-site="6278a259cc3db4179e7a3a8e"><head><meta charset="utf-8"/><title>About us - Our vision | iMocha</title><meta content="We&#x27;re on a mission to make skills intelligence accessible, scalable, and actionable, empowering enterprises to unlock human potential and drive success." name="description"/><meta content="About us - Our vision | iMocha" property="og:title"/><meta content="We&#x27;re on a mission to make skills intelligence accessible, scalable, and actionable, empowering enterprises to unlock human potential and drive success." property="og:description"/><meta content="../../../cdn.prod.website-files.com/6278a259cc3db4179e7a3a8e/638832c7066e0e67c9ddb3d2_OG%20Home%20(7).jpg" property="og:image"/><meta content="About us - Our vision | iMocha" property="twitter:title"/><meta content="We&#x27;re on a mission to make skills intelligence accessible, scalable, and actionable, empowering enterprises to unlock human potential and drive success." property="twitter:description"/><meta content="../../../cdn.prod.website-files.com/6278a259cc3db4179e7a3a8e/638832c7066e0e67c9ddb3d2_OG%20Home%20(7).jpg" property="twitter:image"/><meta property="og:type" content="website"/><meta content="summary_large_image" name="twitter:card"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="Webflow" name="generator"/><link href="../../../cdn.prod.website-files.com/6278a259cc3db4179e7a3a8e/css/imocha.webflow.shared.49d475646.min.css" rel="stylesheet" type="text/css" integrity="sha384-SdR1ZG76OY6bTxh8ogEVpfzMk61caYrktCliqhYYPZ6z0wkLz5nXSzWgtbuwIXhi" crossorigin="anonymous"/>
+
+
+
+<!-- Include Splide library -->
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+<!-- Include Splide AutoScroll extension -->
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const splide = new Splide(".splide", {
+      type: "loop",
+      autoWidth: true,
+      height: "auto",
+      drag: "free",
+      arrows: false,
+      pagination: false,
+      label: "Image Slider",
+      reduceMotion: {
+        speed: 0,
+        rewindSpeed: 0,
+        autoplay: "pause",
+      },
+      autoScroll: {
+        speed: 0.5,
+        pauseOnHover: false,
+      },
+      dragSpeed: 0.5, // Slow down the drag speed
+      breakpoints: {
+        992: {
+          autoScroll: {
+            speed: 0.7, // Adjust speed for screens below 992px
+          },
+          perPage: 2, // Number of slides visible for screens below 992px and above 768px
+        },
+        768: {
+          autoScroll: false, // Disable auto scroll for screens below 768px
+          perPage: 1, // Number of slides visible for screens between 992px and 768px
+        },
+        320: {
+          autoScroll: false, // Disable auto scroll for screens below 768px
+          perPage: 1, // Number of slides visible for screens below 768px and above 320px
+        },
+      },
+    });
+
+    const section = document.querySelector(".splide");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Make sure the .splide element is visible with the transition effect
+            section.classList.add("visible");
+
+            // Delay enabling autoScroll to make the transition smooth
+            setTimeout(() => {
+              splide.options.autoScroll = { speed: 0.5 }; // Enable autoScroll
+              splide.mount(window.splide.Extensions); // Ensure the Splide instance is initialized
+            }, 500); // Delay to match the fade-in duration
+          } else {
+            splide.options.autoScroll = false; // Disable autoScroll when not visible
+            section.classList.remove("visible");
+          }
+        });
+      },
+      { threshold: 0.3 } // Adjust threshold as needed
+    );
+
+    observer.observe(section);
+  });
+</script></body></html>

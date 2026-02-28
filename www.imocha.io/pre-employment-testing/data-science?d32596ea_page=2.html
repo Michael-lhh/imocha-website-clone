@@ -1,0 +1,121 @@
+<!DOCTYPE html><!-- This site was created in Webflow. https://webflow.com --><!-- Last Published: Fri Feb 27 2026 11:42:53 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain="www.imocha.io" data-wf-page="6551b75144d8e8e968caf749" data-wf-site="6278a259cc3db4179e7a3a8e" data-wf-collection="6551b75144d8e8e968caf9fd" data-wf-item-slug="data-science"><head><meta charset="utf-8"/><title>26+ Data Science Test | Candidate Skills Assessment | iMocha</title><meta content="Choose from our 26+ data science tests to assess candidates&#x27; data science skills. It contains questions on Python, ML, Deep Learning, R programming &amp; more." name="description"/><meta content="26+ Data Science Test | Candidate Skills Assessment | iMocha" property="og:title"/><meta content="Choose from our 26+ data science tests to assess candidates&#x27; data science skills. It contains questions on Python, ML, Deep Learning, R programming &amp; more." property="og:description"/><meta content="26+ Data Science Test | Candidate Skills Assessment | iMocha" property="twitter:title"/><meta content="Choose from our 26+ data science tests to assess candidates&#x27; data science skills. It contains questions on Python, ML, Deep Learning, R programming &amp; more." property="twitter:description"/><meta property="og:type" content="website"/><meta content="summary_large_image" name="twitter:card"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="Webflow" name="generator"/><link href="./cdn.prod.website-files.com/6278a259cc3db4179e7a3a8e/css/imocha.webflow.shared.49d475646.min.css" rel="stylesheet" type="text/css" integrity="sha384-SdR1ZG76OY6bTxh8ogEVpfzMk61caYrktCliqhYYPZ6z0wkLz5nXSzWgtbuwIXhi" crossorigin="anonymous"/>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+<script>
+if (!$('#faq-list').length){
+    $('#hide-section').hide();
+}
+</script>
+
+<script>
+(function () {
+  function onReady(fn){
+    if (document.readyState !== 'loading') fn();
+    else document.addEventListener('DOMContentLoaded', fn);
+  }
+
+  // Climb up from the input to find a container that has both lists
+  function findContainer(start){
+    var el = start;
+    while (el && el !== document.documentElement) {
+      if (el.querySelector('.collection-list-wrapper.local-tests') &&
+          el.querySelector('.collection-list-wrapper.global-tests')) {
+        return el;
+      }
+      el = el.parentElement;
+    }
+    return document; // fallback
+  }
+
+  function setupForInput(input){
+    var container = findContainer(input);
+    var local  = container.querySelector('.collection-list-wrapper.local-tests');
+    var global = container.querySelector('.collection-list-wrapper.global-tests');
+    if (!local || !global) return;
+
+    // Determine the "shown" display to use (copy from local's computed display)
+    var shownDisplay = window.getComputedStyle(local).display;
+    if (!shownDisplay || shownDisplay === 'none') shownDisplay = 'block';
+
+    function setView(mode){
+      var showGlobal = mode === 'global';
+      global.style.display = showGlobal ? shownDisplay : 'none';
+      local.style.display  = showGlobal ? 'none' : shownDisplay;
+      global.setAttribute('aria-hidden', showGlobal ? 'false' : 'true');
+      local.setAttribute('aria-hidden', showGlobal ? 'true'  : 'false');
+    }
+
+    function updateByQuery(){
+      var hasQuery = (input.value || '').trim().length > 0;
+      setView(hasQuery ? 'global' : 'local');
+    }
+
+    // Initial state
+    updateByQuery();
+
+    // Show global on focus/click, then keep it in sync with typing
+    input.addEventListener('focus', function(){ setView('global'); });
+    input.addEventListener('click',  function(){ setView('global'); });
+    input.addEventListener('input',  updateByQuery);
+    input.addEventListener('change', updateByQuery);
+
+    // ESC to clear and go back to local
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        input.value = '';
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+        setView('local');
+      }
+    });
+  }
+
+  onReady(function () {
+    // If you have exactly one visible search with this class, this will wire it up.
+    // If you have multiple sections, it will set up each one independently.
+    var inputs = document.querySelectorAll('.search_field-tests');
+    inputs.forEach(setupForInput);
+  });
+})();
+</script>
+<script>
+(function () {
+  function onReady(fn){document.readyState!=='loading'?fn():document.addEventListener('DOMContentLoaded',fn);}
+
+  onReady(function () {
+    var input     = document.querySelector('.search_field-tests'); // your visible search
+    var globalWrap= document.querySelector('.collection-list-wrapper.global-tests');
+    if (!input || !globalWrap) return;
+
+    // Look for a Load More button inside the global list area (covers FS CMS Load & Webflow pagination)
+    function findLoadBtn() {
+      return globalWrap.querySelector(
+        '[data-fs-cmsload-element="load-more"], [fs-cmsload-element="load-more"], ' +
+        '.w-pagination-next, [data-load-more], button[aria-label*="Load"]'
+      );
+    }
+
+    var loadedAll = false;
+    function autoLoadAll() {
+      if (loadedAll) return;
+      var clicks = 0, maxClicks = 200;
+
+      (function loop(){
+        var btn = findLoadBtn();
+        var visible = btn && btn.offsetParent !== null && !btn.disabled;
+        if (!visible || clicks >= maxClicks) { loadedAll = true; return; }
+        btn.click(); clicks++;
+        setTimeout(loop, 60); // small delay for new items to mount
+      })();
+    }
+
+    // Kick off autoload when user shows search intent
+    input.addEventListener('focus', autoLoadAll, { once: true });
+    input.addEventListener('input', function () {
+      // start autoload on first keystroke so search indexes everything
+      if ((input.value || '').length === 1) autoLoadAll();
+    }, { once: true });
+  });
+})();
+</script>
+<script src="https://hubspotonwebflow.com/assets/js/form-124.js" type="text/javascript" integrity="sha384-bjyNIOqAKScdeQ3THsDZLGagNN56B4X2Auu9YZIGu+tA/PlggMk4jbWruG/P6zYj" crossorigin="anonymous"></script></body></html>

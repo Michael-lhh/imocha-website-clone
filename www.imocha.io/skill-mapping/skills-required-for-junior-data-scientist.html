@@ -1,0 +1,44 @@
+<!DOCTYPE html><!-- This site was created in Webflow. https://webflow.com --><!-- Last Published: Fri Feb 27 2026 11:42:53 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain="www.imocha.io" data-wf-page="6551b75144d8e8e968caf750" data-wf-site="6278a259cc3db4179e7a3a8e" data-wf-collection="6551b75144d8e8e968cafa83" data-wf-item-slug="skills-required-for-junior-data-scientist"><head><meta charset="utf-8"/><title>Skills Required for Junior Data Scientist | iMocha</title><meta content="Evaluate your junior data scientists&#x27; skills with comprehensive skill mapping. Identify strengths, bridge gaps, &amp; optimize talent for enhanced performance." name="description"/><meta content="Skills Required for Junior Data Scientist | iMocha" property="og:title"/><meta content="Evaluate your junior data scientists&#x27; skills with comprehensive skill mapping. Identify strengths, bridge gaps, &amp; optimize talent for enhanced performance." property="og:description"/><meta content="Skills Required for Junior Data Scientist | iMocha" property="twitter:title"/><meta content="Evaluate your junior data scientists&#x27; skills with comprehensive skill mapping. Identify strengths, bridge gaps, &amp; optimize talent for enhanced performance." property="twitter:description"/><meta property="og:type" content="website"/><meta content="summary_large_image" name="twitter:card"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="Webflow" name="generator"/><link href="./cdn.prod.website-files.com/6278a259cc3db4179e7a3a8e/css/imocha.webflow.shared.49d475646.min.css" rel="stylesheet" type="text/css" integrity="sha384-SdR1ZG76OY6bTxh8ogEVpfzMk61caYrktCliqhYYPZ6z0wkLz5nXSzWgtbuwIXhi" crossorigin="anonymous"/>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+<!-- 💙 MEMBERSCRIPT #35 v0.1 💙 FAQ RICH SNIPPETS -->
+<script>
+let faqArray = [];
+let questionElements = document.querySelectorAll('[ms-code-snippet-q]');
+let answerElements = document.querySelectorAll('[ms-code-snippet-a]');
+
+for (let i = 0; i < questionElements.length; i++) {
+  let question = questionElements[i].innerText;
+  let answer = '';
+
+  for (let j = 0; j < answerElements.length; j++) {
+    if (questionElements[i].getAttribute('ms-code-snippet-q') === answerElements[j].getAttribute('ms-code-snippet-a')) {
+      answer = answerElements[j].innerText;
+      break;
+    }
+  }
+
+  faqArray.push({
+    "@type": "Question",
+    "name": question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": answer
+    }
+  });
+}
+
+let faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqArray
+}
+
+let script = document.createElement('script');
+script.type = "application/ld+json";
+script.innerHTML = JSON.stringify(faqSchema);
+
+document.getElementsByTagName('head')[0].appendChild(script);
+</script>
+<script src="https://hubspotonwebflow.com/assets/js/form-124.js" type="text/javascript" integrity="sha384-bjyNIOqAKScdeQ3THsDZLGagNN56B4X2Auu9YZIGu+tA/PlggMk4jbWruG/P6zYj" crossorigin="anonymous"></script></body></html>

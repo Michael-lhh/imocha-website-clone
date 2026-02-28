@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-02-28T08:37:23.587Z",
+  "heroChecks": [
+    {
+      "selector": ".section-2025.hero",
+      "found": false
+    },
+    {
+      "selector": "[class*=\"hero\"]",
+      "found": true,
+      "className": "container-2025 hero",
+      "visible": true
+    },
+    {
+      "selector": ".hero",
+      "found": true,
+      "className": "container-2025 hero",
+      "visible": true
+    },
+    {
+      "selector": "section.hero",
+      "found": false
+    }
+  ],
+  "sectionsFound": 5,
+  "hasDropdowns": false,
+  "consoleErrors": 1,
+  "videoRecorded": true
+}
