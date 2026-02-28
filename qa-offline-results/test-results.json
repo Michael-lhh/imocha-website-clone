@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-02-28T09:24:02.394Z",
+  "tests": [
+    {
+      "name": "Homepage Load",
+      "status": "PASS",
+      "details": "Loaded in 8517ms, Status: 200",
+      "screenshot": "01-homepage-desktop.png",
+      "timestamp": "2026-02-28T09:24:11.543Z"
+    },
+    {
+      "name": "Navigation Bar",
+      "status": "PASS",
+      "details": "Navigation and logo found",
+      "screenshot": "02-navigation-bar.png",
+      "timestamp": "2026-02-28T09:24:14.934Z"
+    },
+    {
+      "name": "Mobile Responsive",
+      "status": "PASS",
+      "details": "Mobile menu button found",
+      "screenshot": "03-mobile-view.png",
+      "timestamp": "2026-02-28T09:24:18.506Z"
+    },
+    {
+      "name": "Internal Links",
+      "status": "PASS",
+      "details": "Tested 5 links, 5 working",
+      "screenshot": "04-links-test.png",
+      "timestamp": "2026-02-28T09:24:22.947Z"
+    },
+    {
+      "name": "Dark Mode",
+      "status": "WARN",
+      "details": "Background: rgb(255, 255, 255)",
+      "screenshot": "05-dark-mode.png",
+      "timestamp": "2026-02-28T09:24:26.673Z"
+    },
+    {
+      "name": "Console Errors",
+      "status": "PASS",
+      "details": "0 total errors (non-critical)",
+      "screenshot": "06-console-errors.json",
+      "timestamp": "2026-02-28T09:24:36.677Z"
+    },
+    {
+      "name": "Page Resources",
+      "status": "PASS",
+      "details": "0 failed requests (non-critical)",
+      "screenshot": "07-failed-requests.json",
+      "timestamp": "2026-02-28T09:24:43.440Z"
+    },
+    {
+      "name": "Tablet Responsive",
+      "status": "PASS",
+      "details": "Tablet layout rendered",
+      "screenshot": "08-tablet-view.png",
+      "timestamp": "2026-02-28T09:24:48.944Z"
+    },
+    {
+      "name": "Footer",
+      "status": "PASS",
+      "details": "Footer section found",
+      "screenshot": "09-footer.png",
+      "timestamp": "2026-02-28T09:24:53.230Z"
+    },
+    {
+      "name": "Hero Section",
+      "status": "PASS",
+      "details": "H1: \"Skills Visibility. Business Agility....\"",
+      "screenshot": "10-hero-section.png",
+      "timestamp": "2026-02-28T09:24:56.628Z"
+    }
+  ],
+  "summary": {
+    "passed": 9,
+    "failed": 0,
+    "warnings": 1
+  }
+}
